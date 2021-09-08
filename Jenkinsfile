@@ -11,9 +11,7 @@ pipeline{
          }
          stage('Test'){
             steps{
-               pwsh(script:"""
-                     docker --version
-                     """)
+              bat 'docker --version'
             }
          }
    }
