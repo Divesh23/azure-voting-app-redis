@@ -13,7 +13,9 @@ pipeline{
             steps{
                docker --version
               pwsh(script:'docker images -a')
-              pwsh(script:'docker --version')
+              pwsh(script:"""
+                  docker --version
+                  """)
                /*pwsh(script:"""
                   cd azure-vote/
                   docker images -a
