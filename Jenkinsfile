@@ -1,8 +1,8 @@
 pipeline{
    agent any
-   triggers { 
-      pollSCM('* * * * *')
-      }
+   //triggers { 
+     // pollSCM('* * * * *')
+      //}
    stages{
          stage('Verify Branch'){
             steps{
@@ -11,7 +11,7 @@ pipeline{
          }
          stage('Test'){
             steps{
-              bat 'docker --version'
+              pwsh 'docker --version'
             }
          }
    }
