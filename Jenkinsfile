@@ -9,21 +9,11 @@ pipeline{
                echo "$GIT_BRANCH"
             }
          }
-         stage('Docker Build'){
+         stage('Test'){
             steps{
-               docker --version
-              pwsh(script:'docker images -a')
-              pwsh(script:"""
-                  docker --version
-                  """)
-               /*pwsh(script:"""
-                  cd azure-vote/
-                  docker images -a
-                  docker images -t jenkins-pipeline .
-                  docker images -a
-                  cd..
-               """)*/
-               
+               pwsh(script:"""
+                     docker --version
+                     """)
             }
          }
    }
